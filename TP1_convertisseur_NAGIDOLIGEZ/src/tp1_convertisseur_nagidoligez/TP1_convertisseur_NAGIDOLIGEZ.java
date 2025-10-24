@@ -22,7 +22,7 @@ public class TP1_convertisseur_NAGIDOLIGEZ {
         int conversion;
 
         Scanner sc = new Scanner(System.in);
-        System.out.println("Entrer le nombre :");
+        System.out.println("Entrer une temperature :");
         uservalue = sc.nextDouble();
 
         Scanner sc1 = new Scanner(System.in);
@@ -30,27 +30,27 @@ public class TP1_convertisseur_NAGIDOLIGEZ {
         conversion = sc1.nextInt();
 
         if (conversion == 1) {
-            System.out.println(CelciusVersKelvin(uservalue));
+            System.out.println("conversion : "+CelciusVersKelvin(uservalue));
         }
         if (conversion == 2) {
-                System.out.println(KelvinVersCelcius(uservalue));
+                System.out.println("conversion : "+KelvinVersCelcius(uservalue));
             }
         if (conversion == 3) {
-                System.out.println(FarenheitVersCelcius(uservalue));
+                System.out.println("conversion : "+FarenheitVersCelcius(uservalue));
             }
         if (conversion == 4) {
-                System.out.println(CelciusVersFarenheit(uservalue));
+                System.out.println("conversion : "+CelciusVersFarenheit(uservalue));
             }
         if (conversion == 5) {
-                System.out.println(KelvinVersFarenheit(uservalue));
+                System.out.println("conversion : "+KelvinVersFarenheit(uservalue));
             }
         if (conversion == 6) {
-                System.out.println(FarenheitVersKelvin(uservalue));
+                System.out.println("conversion : "+FarenheitVersKelvin(uservalue));
             }
         }
 
 // TODO code application logic here
-    }
+    
 
     public static double CelciusVersKelvin(double tCelcius) {
         tCelcius = tCelcius + 273.15;
@@ -58,7 +58,7 @@ public class TP1_convertisseur_NAGIDOLIGEZ {
 
     }
 
-    // je ne suis pas malin donc je procède comme précédemment
+    // suite
     
     public static double KelvinVersCelcius(double tKelvin) {
         tKelvin = tKelvin - 273.15;
@@ -85,3 +85,4 @@ public class TP1_convertisseur_NAGIDOLIGEZ {
         return tFarenheit;
     }
 
+}
