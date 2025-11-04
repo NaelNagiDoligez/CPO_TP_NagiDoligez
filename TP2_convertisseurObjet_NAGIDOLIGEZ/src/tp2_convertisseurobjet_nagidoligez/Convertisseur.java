@@ -10,7 +10,8 @@ package tp2_convertisseurobjet_nagidoligez;
  */
 public class Convertisseur {
 
-    int nbConversions;
+    double nbConversions;
+    double valeur;
 
     public Convertisseur() {
         nbConversions = 0;
@@ -18,37 +19,43 @@ public class Convertisseur {
 
     public double CelciusVersKelvin(double tCelcius) {
         tCelcius = tCelcius + 273.15;
+        nbConversions+=0.5;
         return tCelcius;
     }
 
     public double KelvinVersCelcius(double tKelvin) {
         tKelvin = tKelvin - 273.15;
+        nbConversions+=0.5;
         return tKelvin;
     }
 
     public double FarenheitVersCelcius(double tFarenheit) {
         tFarenheit = (tFarenheit - 32) * 5 / 9;
+        nbConversions+=0.5;
         return tFarenheit;
     }
 
     public double CelciusVersFarenheit(double tCelcius) {
         tCelcius = tCelcius * 1.8 + 32;
+        nbConversions+=0.5;
         return tCelcius;
     }
 
     public double KelvinVersFarenheit(double tKelvin) {
         tKelvin = (tKelvin - 273.15) * 1.8 + 32;
+        nbConversions+=0.5;
         return tKelvin;
     }
 
     public double FarenheitVersKelvin(double tFarenheit) {
         tFarenheit = (tFarenheit - 32) * 5 / 9 + 273.15;
+        nbConversions+=0.5;
         return tFarenheit;
     }
 
     @Override
     public String toString() {
-        return "nb de conversions" + nbConversions;
+        return "nb de conversions : " + nbConversions;
     }
     
     
