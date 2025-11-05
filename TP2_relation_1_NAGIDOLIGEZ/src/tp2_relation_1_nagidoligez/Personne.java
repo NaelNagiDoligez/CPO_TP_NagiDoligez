@@ -9,7 +9,39 @@ package tp2_relation_1_nagidoligez;
  * @author jacqu
  */
 public class Personne {
+
     String prenom;
     String nom;
-    
+    int nbVoitures;
+    Voiture[] liste_voitures;
+
+    public Personne(String prenom, String nom) {
+        this.prenom = prenom;
+        this.nom = nom;
+        this.liste_voitures = new Voiture[3];
+        this.nbVoitures = 0;
+    }
+
+    public boolean ajouter_voiture(Voiture voiture_a_ajouter) {
+
+        if (voiture_a_ajouter.proprietaire != null) {
+            System.out.println("Erreur : " + voiture_a_ajouter + " appartient déjà à " + voiture_a_ajouter.proprietaire);
+            return false;
+        }
+        if (nbVoitures >= 3) {
+            System.out.println("Erreur : " + this + " possède déjà 3 voitures !");
+            return false;
+        } 
+            liste_voitures[nbVoitures] = voiture_a_ajouter;
+            nbVoitures++;
+            voiture_a_ajouter.proprietaire = this;
+            return true;
+        
+    }
+
+    @Override
+    public String toString() {
+        return prenom + " " + nom;
+    }
+
 }
