@@ -21,7 +21,9 @@ public abstract class Personnage {
         return nom;
     }
     
-    public
+    public int hp(){
+        return hp;
+    }
 
     @Override
     public String toString() {

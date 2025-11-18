@@ -37,6 +37,12 @@ public class TP3_Heroic_Fantasy_NAGIDOLIGEZ {
             Arme arme = listeArmes.get(i);
             System.out.println(arme);
         }
+        
+        
+        
+        
+        
+        
     }
 
 }
