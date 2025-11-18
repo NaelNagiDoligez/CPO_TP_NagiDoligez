@@ -40,25 +40,26 @@ public class TP3_Heroic_Fantasy_NAGIDOLIGEZ {
             Arme arme = listeArmes.get(i);
             System.out.println(arme);
         }
-        
-        Magicien magicien1 = new Magicien("Gandalf",65,true);
-        Magicien magicien2 = new Magicien("Garcimore",44,false);
-        
-        Guerrier guerrier1 = new Guerrier("Conan",78,false);
-        Guerrier guerrier2 = new Guerrier("Lannister",45,true);
-        
+
+        Magicien magicien1 = new Magicien("Gandalf", 65, true);
+        Magicien magicien2 = new Magicien("Garcimore", 44, false);
+
+        Guerrier guerrier1 = new Guerrier("Conan", 78, false);
+        Guerrier guerrier2 = new Guerrier("Lannister", 45, true);
+
         ArrayList<Personnage> listePersonnage = new ArrayList<>();
-        
+
         listePersonnage.add(magicien1);
         listePersonnage.add(magicien2);
         listePersonnage.add(guerrier1);
         listePersonnage.add(guerrier2);
-        
-        
-         for (int i = 0; i < listePersonnage.size(); i++) {
+
+        for (int i = 0; i < listePersonnage.size(); i++) {
             Personnage perso = listePersonnage.get(i);
             System.out.println(perso);
         }
+
+        ArrayList<> listePersonnage = new ArrayList<>();
         
     }
 
