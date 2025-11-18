@@ -25,9 +25,11 @@ public class TP3_Heroic_Fantasy_NAGIDOLIGEZ {
 
         Epee epee1 = new Epee("Excalibur", 7, 5);
         Epee epee2 = new Epee("Durandal", 4, 7);
+        Epee epee3 = new Epee("epee3", 8, 3);
 
         Baton baton1 = new Baton("Chêne", 4, 5);
         Baton baton2 = new Baton("Charme", 5, 6);
+        Baton baton3 = new Baton("baton3", 7, 7);
 
         ArrayList<Arme> listeArmes = new ArrayList<>();
 
@@ -59,8 +61,15 @@ public class TP3_Heroic_Fantasy_NAGIDOLIGEZ {
             System.out.println(perso);
         }
 
-        ArrayList<> listePersonnage = new ArrayList<>();
+        guerrier1.ajouterArme(baton1);
+        guerrier1.ajouterArme(epee1);
+        guerrier1.ajouterArme(epee2);
+
+        guerrier1.equiperArme("Excalibur");
         
+        magicien1.ajouterArme(baton2);
+        magicien1.ajouterArme(baton3);
+        magicien1.ajouterArme(epee3);
     }
 
 }
