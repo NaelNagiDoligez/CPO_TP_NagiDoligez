@@ -92,6 +92,9 @@ public boolean estVivant() {
     return this.hp > 0;
 }
 
+public abstract void attaquer(Personnage cible);
+
+
     @Override
     public String toString() {
         String description = " nom= " + nom + " hp= " + hp;

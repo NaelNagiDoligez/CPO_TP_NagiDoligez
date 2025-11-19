@@ -46,5 +46,13 @@ public class Magicien extends Personnage {
         String description = super.toString();
 
         return description + "\n  Statut : " + statut;
-    }
+    } 
+    
+    @Override
+public void attaquer(Personnage cible) {
+    int degats = 20;  
+    System.out.println(this.nom + " Le magicien attaque " + cible.nom());
+    cible.estAttaqué(degats);
+}
+
 }
