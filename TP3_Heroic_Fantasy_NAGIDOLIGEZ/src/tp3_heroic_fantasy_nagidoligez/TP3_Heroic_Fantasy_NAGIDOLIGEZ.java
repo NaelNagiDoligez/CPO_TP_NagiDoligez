@@ -70,6 +70,9 @@ public class TP3_Heroic_Fantasy_NAGIDOLIGEZ {
         magicien1.ajouterArme(baton2);
         magicien1.ajouterArme(baton3);
         magicien1.ajouterArme(epee3);
+        
+       System.out.println(guerrier1);
+       System.out.println(magicien1);
     }
 
 }

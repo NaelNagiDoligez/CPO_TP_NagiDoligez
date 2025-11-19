@@ -15,6 +15,7 @@ public abstract class Personnage {
 
     String nom;
     int hp;
+    static int nbPerso = 0;
 
     ArrayList<Arme> inventaire = new ArrayList<>();
 
@@ -54,6 +55,11 @@ public abstract class Personnage {
     public Personnage(String nom, int hp) {
         this.nom = nom;
         this.hp = hp;
+        nbPerso++;
+    }
+
+    public static int getNbPerso() {
+        return nbPerso;
     }
 
     public String nom() {
