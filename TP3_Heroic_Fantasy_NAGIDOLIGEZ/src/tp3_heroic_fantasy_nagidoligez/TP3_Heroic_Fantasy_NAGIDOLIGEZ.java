@@ -73,6 +73,9 @@ public class TP3_Heroic_Fantasy_NAGIDOLIGEZ {
         
        System.out.println(guerrier1);
        System.out.println(magicien1);
+       
+       
+
     }
 
 }

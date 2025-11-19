@@ -6,12 +6,12 @@ package Personnages;
 
 import Armes.Arme;
 import java.util.ArrayList;
-
+import tp3_heroic_fantasy_nagidoligez.etreVivant;
 /**
  *
  * @author jacqu
  */
-public abstract class Personnage {
+public abstract class Personnage implements etreVivant {
 
     String nom;
     int hp;
@@ -57,8 +57,13 @@ public abstract class Personnage {
         this.hp = hp;
         nbPerso++;
     }
+    
+    @Override
+    public void finalize(){
+        nbPerso--;
+    }
 
-    public static int getNbPerso() {
+    public static int getnbPerso() {
         return nbPerso;
     }
 
@@ -69,6 +74,23 @@ public abstract class Personnage {
     public int hp() {
         return hp;
     }
+    
+    @Override
+public void seFatiguer() {
+    this.hp -= 10;
+    System.out.println(this.nom + " se fatigue.\nHP : " + this.hp);
+}
+
+@Override
+public  void estAttaqué(int points) {
+    this.hp -= points;
+    System.out.println(this.nom + " se fait attaquer.\nHP : " + this.hp);
+}
+
+@Override
+public boolean estVivant() {
+    return this.hp > 0;
+}
 
     @Override
     public String toString() {

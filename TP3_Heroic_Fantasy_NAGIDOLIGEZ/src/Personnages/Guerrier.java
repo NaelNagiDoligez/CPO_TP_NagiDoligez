@@ -4,7 +4,6 @@
  */
 package Personnages;
 
-import Personnages.Personnage;
 
 /**
  *
@@ -20,10 +19,13 @@ public class Guerrier extends Personnage{
         nbGuerrier++;
     }
 
-    public static int getNbGuerrier() {
+    public static int getnbGuerrier() {
         return nbGuerrier;
     }
-
+    @Override
+    public void finalize(){
+        nbGuerrier--;
+    }
     
     
     public void setCheval(boolean cheval) {

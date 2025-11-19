@@ -4,7 +4,6 @@
  */
 package Personnages;
 
-import Personnages.Personnage;
 
 /**
  *
@@ -19,8 +18,13 @@ public class Magicien extends Personnage {
         this.confirme = confirme;
         nbMagicien++;
     }
+    
+        @Override
+    public void finalize(){
+        nbMagicien--;
+    }
 
-    public static int getNbMagicien() {
+    public static int getnbMagicien() {
         return nbMagicien;
     }
 
