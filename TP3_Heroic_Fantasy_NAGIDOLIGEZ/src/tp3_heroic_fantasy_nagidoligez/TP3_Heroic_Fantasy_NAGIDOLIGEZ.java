@@ -75,7 +75,20 @@ public class TP3_Heroic_Fantasy_NAGIDOLIGEZ {
        System.out.println(magicien1);
        
        
+      // 5.2
+      
+    Magicien magicientest = new Magicien("magicientest", 150, true);
+    Guerrier guerriertest = new Guerrier("guerriertest", 160, false);
 
+    System.out.println(magicientest);
+    System.out.println(magicientest);
+    
+    guerriertest.seFatiguer();
+    System.out.println(guerriertest);
+    
+    guerriertest.attaquer(magicientest);
+    System.out.println(magicientest);
+    System.out.println(guerriertest);
     }
 
 }
