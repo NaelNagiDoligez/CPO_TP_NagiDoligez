@@ -144,7 +144,7 @@ q.melangerReponses();
     }
 
     private void verifierReponse(int choixUtilisateur) {
-
+ 
         Questions q = ListeQuestions.get(indexQuestionCourante);
 
         // Vérifier si le choix correspond à la bonne réponse
@@ -152,19 +152,24 @@ q.melangerReponses();
             scoreValue++;  // On incrémente
             score.setText(String.valueOf(scoreValue)); // Met à jour l’affichage du score
             reponsecorrecte.setText("Bonne réponse !");
+
+
         } else {
             reponsecorrecte.setText(
     "Mauvaise réponse ! La bonne réponse était : "
     + getLettreBonneReponse(q.getIndexBonneReponse())
 );
-
+  
         }
 
+        
         // Désactiver les boutons après la réponse
         A.setEnabled(false);
         B.setEnabled(false);
         C.setEnabled(false);
         D.setEnabled(false);
+       
+    
     }
     private String getLettreBonneReponse(int index) {
     switch (index) {
