@@ -176,7 +176,7 @@ public class fenetre_cadenas extends javax.swing.JFrame {
     }//GEN-LAST:event_bouton_recommencerActionPerformed
 
     private void up_chiffre_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_up_chiffre_1ActionPerformed
-        // TODO add your handling code here:
+        // testTODO add your handling code here:
     }//GEN-LAST:event_up_chiffre_1ActionPerformed
 
     /**
