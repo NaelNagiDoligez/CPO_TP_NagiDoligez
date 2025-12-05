@@ -28,23 +28,28 @@ public class fenetre_cadenas extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jToggleButton1 = new javax.swing.JToggleButton();
-        jToggleButton2 = new javax.swing.JToggleButton();
-        jToggleButton3 = new javax.swing.JToggleButton();
-        jToggleButton4 = new javax.swing.JToggleButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jToggleButton5 = new javax.swing.JToggleButton();
-        jToggleButton6 = new javax.swing.JToggleButton();
-        jToggleButton7 = new javax.swing.JToggleButton();
-        jToggleButton8 = new javax.swing.JToggleButton();
-        jToggleButton9 = new javax.swing.JToggleButton();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        bouton_recommencer = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
+        jButton7 = new javax.swing.JButton();
+        jButton8 = new javax.swing.JButton();
+        jButton9 = new javax.swing.JButton();
+        jButton10 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -53,106 +58,120 @@ public class fenetre_cadenas extends javax.swing.JFrame {
         jLabel1.setText("Trouvez le bon code en moins de 5 tentatives :");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 22, 370, 40));
 
-        jToggleButton1.setText("/\\");
-            jToggleButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-            jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        jLabel2.setText("0");
+        jLabel2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 110, 40, 85));
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        jLabel3.setText("0");
+        jLabel3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, 40, 85));
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        jLabel4.setText("0");
+        jLabel4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 110, 40, 85));
+
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        jLabel5.setText("0");
+        jLabel5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 110, 40, 85));
+
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        jLabel6.setText("Nombre de chiffres trop bas :");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, 230, 30));
+
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        jLabel7.setText("Nombre de chiffres exactes :");
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, 210, 30));
+
+        jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        jLabel8.setText("Nombre de chiffres trop hauts :");
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 290, 230, 30));
+
+        jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        jLabel9.setText("0");
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 330, 30, 30));
+
+        jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        jLabel10.setText("0");
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 250, 30, 30));
+
+        jLabel11.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        jLabel11.setText("0");
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 290, 30, 30));
+
+        jLabel12.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel12.setText("Tentatives :");
+        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 240, 110, 30));
+
+        jLabel13.setFont(new java.awt.Font("Segoe UI", 1, 22)); // NOI18N
+        jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel13.setText("0 sur 5");
+        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 270, 110, 80));
+
+        bouton_recommencer.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        bouton_recommencer.setText("RECOMMENCER");
+        bouton_recommencer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bouton_recommencerActionPerformed(evt);
+            }
+        });
+        getContentPane().add(bouton_recommencer, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 360, 190, 40));
+
+        jButton2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jButton2.setText("/\\");
+            jButton2.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    jToggleButton1ActionPerformed(evt);
+                    jButton2ActionPerformed(evt);
                 }
             });
-            getContentPane().add(jToggleButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 90, 60, 30));
+            getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 60, 30));
 
-            jToggleButton2.setText("/\\");
-                jToggleButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-                jToggleButton2.addActionListener(new java.awt.event.ActionListener() {
-                    public void actionPerformed(java.awt.event.ActionEvent evt) {
-                        jToggleButton2ActionPerformed(evt);
-                    }
-                });
-                getContentPane().add(jToggleButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 90, 60, 30));
+            jButton3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+            jButton3.setText("/\\");
+                getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 90, 60, 30));
 
-                jToggleButton3.setText("/\\");
-                    jToggleButton3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-                    getContentPane().add(jToggleButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 90, 60, 30));
+                jButton4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+                jButton4.setText("/\\");
+                    getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 90, 60, 30));
 
-                    jToggleButton4.setText("\\/");
-                    jToggleButton4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-                    getContentPane().add(jToggleButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 190, 60, 30));
+                    jButton5.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+                    jButton5.setText("/\\");
+                        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 90, 60, 30));
 
-                    jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
-                    jLabel2.setText("0");
-                    jLabel2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-                    getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 110, 40, 85));
+                        jButton6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+                        jButton6.setText("\\/");
+                        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 60, 30));
 
-                    jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
-                    jLabel3.setText("0");
-                    jLabel3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-                    getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, 40, 85));
+                        jButton7.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+                        jButton7.setText("\\/");
+                        getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 190, 60, 30));
 
-                    jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
-                    jLabel4.setText("0");
-                    jLabel4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-                    getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 110, 40, 85));
+                        jButton8.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+                        jButton8.setText("\\/");
+                        getContentPane().add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 190, 60, 30));
 
-                    jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
-                    jLabel5.setText("0");
-                    jLabel5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-                    getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 110, 40, 85));
+                        jButton9.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+                        jButton9.setText("\\/");
+                        getContentPane().add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 190, 60, 30));
 
-                    jToggleButton5.setText("/\\");
-                        jToggleButton5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-                        getContentPane().add(jToggleButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 60, 30));
-
-                        jToggleButton6.setText("\\/");
-                        jToggleButton6.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-                        jToggleButton6.addActionListener(new java.awt.event.ActionListener() {
-                            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                                jToggleButton6ActionPerformed(evt);
-                            }
-                        });
-                        getContentPane().add(jToggleButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 60, 30));
-
-                        jToggleButton7.setText("\\/");
-                        jToggleButton7.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-                        getContentPane().add(jToggleButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 190, 60, 30));
-
-                        jToggleButton8.setText("\\/");
-                        jToggleButton8.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-                        getContentPane().add(jToggleButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 190, 60, 30));
-
-                        jToggleButton9.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-                        jToggleButton9.setText("TESTER");
-                        getContentPane().add(jToggleButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 130, 120, 40));
-
-                        jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-                        jLabel6.setText("Nombre de chiffres trop bas :");
-                        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, 230, 30));
-
-                        jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-                        jLabel7.setText("Nombre de chiffres exactes :");
-                        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, 210, 30));
-
-                        jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-                        jLabel8.setText("Nombre de chiffres trop hauts :");
-                        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 290, 230, 30));
-
-                        jLabel9.setText("jLabel9");
-                        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 260, 60, 20));
+                        jButton10.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+                        jButton10.setText("TESTER");
+                        getContentPane().add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 130, 120, 40));
 
                         pack();
                     }// </editor-fold>//GEN-END:initComponents
 
-    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
+    private void bouton_recommencerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bouton_recommencerActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleButton1ActionPerformed
+    }//GEN-LAST:event_bouton_recommencerActionPerformed
 
-    private void jToggleButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton2ActionPerformed
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleButton2ActionPerformed
-
-    private void jToggleButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleButton6ActionPerformed
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -180,7 +199,21 @@ public class fenetre_cadenas extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton bouton_recommencer;
+    private javax.swing.JButton jButton10;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
+    private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -189,14 +222,5 @@ public class fenetre_cadenas extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JToggleButton jToggleButton1;
-    private javax.swing.JToggleButton jToggleButton2;
-    private javax.swing.JToggleButton jToggleButton3;
-    private javax.swing.JToggleButton jToggleButton4;
-    private javax.swing.JToggleButton jToggleButton5;
-    private javax.swing.JToggleButton jToggleButton6;
-    private javax.swing.JToggleButton jToggleButton7;
-    private javax.swing.JToggleButton jToggleButton8;
-    private javax.swing.JToggleButton jToggleButton9;
     // End of variables declaration//GEN-END:variables
 }
