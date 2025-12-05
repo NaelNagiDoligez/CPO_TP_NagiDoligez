@@ -27,90 +27,90 @@ public class fenetre_cadenas extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
+        texte_intro = new javax.swing.JLabel();
+        texte_chiffre_3 = new javax.swing.JLabel();
+        texte_chiffre_0 = new javax.swing.JLabel();
+        texte_chiffre_1 = new javax.swing.JLabel();
+        texte_chiffre_2 = new javax.swing.JLabel();
+        texte_lbl__nb_chiffres_bas = new javax.swing.JLabel();
+        texte_lbl_nb_chiffres_exacts = new javax.swing.JLabel();
+        texte_lbl_nb_chiffres_haut = new javax.swing.JLabel();
+        texte_nb_chiffres_bas = new javax.swing.JLabel();
+        texte_nb_chiffres_exacts = new javax.swing.JLabel();
+        texte_nb_chiffre_haut = new javax.swing.JLabel();
+        texte_tentatives = new javax.swing.JLabel();
+        texte_score = new javax.swing.JLabel();
         bouton_recommencer = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
-        jButton9 = new javax.swing.JButton();
-        jButton10 = new javax.swing.JButton();
+        up_chiffre_1 = new javax.swing.JButton();
+        up_chiffre_2 = new javax.swing.JButton();
+        up_chiffre_3 = new javax.swing.JButton();
+        up_chiffre_4 = new javax.swing.JButton();
+        down_chiffre_1 = new javax.swing.JButton();
+        down_chiffre_2 = new javax.swing.JButton();
+        down_chiffre_3 = new javax.swing.JButton();
+        down_chiffre_4 = new javax.swing.JButton();
+        bouton_tester = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        jLabel1.setText("Trouvez le bon code en moins de 5 tentatives :");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 22, 370, 40));
+        texte_intro.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        texte_intro.setText("Trouvez le bon code en moins de 5 tentatives :");
+        getContentPane().add(texte_intro, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 22, 370, 40));
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
-        jLabel2.setText("0");
-        jLabel2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 110, 40, 85));
+        texte_chiffre_3.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        texte_chiffre_3.setText("0");
+        texte_chiffre_3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(texte_chiffre_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 110, 40, 85));
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
-        jLabel3.setText("0");
-        jLabel3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, 40, 85));
+        texte_chiffre_0.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        texte_chiffre_0.setText("0");
+        texte_chiffre_0.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(texte_chiffre_0, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, 40, 85));
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
-        jLabel4.setText("0");
-        jLabel4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 110, 40, 85));
+        texte_chiffre_1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        texte_chiffre_1.setText("0");
+        texte_chiffre_1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(texte_chiffre_1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 110, 40, 85));
 
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
-        jLabel5.setText("0");
-        jLabel5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 110, 40, 85));
+        texte_chiffre_2.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        texte_chiffre_2.setText("0");
+        texte_chiffre_2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(texte_chiffre_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 110, 40, 85));
 
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        jLabel6.setText("Nombre de chiffres trop bas :");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, 230, 30));
+        texte_lbl__nb_chiffres_bas.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        texte_lbl__nb_chiffres_bas.setText("Nombre de chiffres trop bas :");
+        getContentPane().add(texte_lbl__nb_chiffres_bas, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, 230, 30));
 
-        jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        jLabel7.setText("Nombre de chiffres exactes :");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, 210, 30));
+        texte_lbl_nb_chiffres_exacts.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        texte_lbl_nb_chiffres_exacts.setText("Nombre de chiffres exactes :");
+        getContentPane().add(texte_lbl_nb_chiffres_exacts, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, 210, 30));
 
-        jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        jLabel8.setText("Nombre de chiffres trop hauts :");
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 290, 230, 30));
+        texte_lbl_nb_chiffres_haut.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        texte_lbl_nb_chiffres_haut.setText("Nombre de chiffres trop hauts :");
+        getContentPane().add(texte_lbl_nb_chiffres_haut, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 290, 230, 30));
 
-        jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        jLabel9.setText("0");
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 330, 30, 30));
+        texte_nb_chiffres_bas.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        texte_nb_chiffres_bas.setText("0");
+        getContentPane().add(texte_nb_chiffres_bas, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 330, 30, 30));
 
-        jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        jLabel10.setText("0");
-        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 250, 30, 30));
+        texte_nb_chiffres_exacts.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        texte_nb_chiffres_exacts.setText("0");
+        getContentPane().add(texte_nb_chiffres_exacts, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 250, 30, 30));
 
-        jLabel11.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        jLabel11.setText("0");
-        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 290, 30, 30));
+        texte_nb_chiffre_haut.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        texte_nb_chiffre_haut.setText("0");
+        getContentPane().add(texte_nb_chiffre_haut, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 290, 30, 30));
 
-        jLabel12.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel12.setText("Tentatives :");
-        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 240, 110, 30));
+        texte_tentatives.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        texte_tentatives.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        texte_tentatives.setText("Tentatives :");
+        getContentPane().add(texte_tentatives, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 240, 110, 30));
 
-        jLabel13.setFont(new java.awt.Font("Segoe UI", 1, 22)); // NOI18N
-        jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel13.setText("0 sur 5");
-        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 270, 110, 80));
+        texte_score.setFont(new java.awt.Font("Segoe UI", 1, 22)); // NOI18N
+        texte_score.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        texte_score.setText("0 sur 5");
+        getContentPane().add(texte_score, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 270, 110, 80));
 
         bouton_recommencer.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         bouton_recommencer.setText("RECOMMENCER");
@@ -121,46 +121,46 @@ public class fenetre_cadenas extends javax.swing.JFrame {
         });
         getContentPane().add(bouton_recommencer, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 360, 190, 40));
 
-        jButton2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton2.setText("/\\");
-            jButton2.addActionListener(new java.awt.event.ActionListener() {
+        up_chiffre_1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        up_chiffre_1.setText("/\\");
+            up_chiffre_1.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    jButton2ActionPerformed(evt);
+                    up_chiffre_1ActionPerformed(evt);
                 }
             });
-            getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 60, 30));
+            getContentPane().add(up_chiffre_1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 60, 30));
 
-            jButton3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-            jButton3.setText("/\\");
-                getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 90, 60, 30));
+            up_chiffre_2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+            up_chiffre_2.setText("/\\");
+                getContentPane().add(up_chiffre_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 90, 60, 30));
 
-                jButton4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-                jButton4.setText("/\\");
-                    getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 90, 60, 30));
+                up_chiffre_3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+                up_chiffre_3.setText("/\\");
+                    getContentPane().add(up_chiffre_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 90, 60, 30));
 
-                    jButton5.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-                    jButton5.setText("/\\");
-                        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 90, 60, 30));
+                    up_chiffre_4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+                    up_chiffre_4.setText("/\\");
+                        getContentPane().add(up_chiffre_4, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 90, 60, 30));
 
-                        jButton6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-                        jButton6.setText("\\/");
-                        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 60, 30));
+                        down_chiffre_1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+                        down_chiffre_1.setText("\\/");
+                        getContentPane().add(down_chiffre_1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 60, 30));
 
-                        jButton7.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-                        jButton7.setText("\\/");
-                        getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 190, 60, 30));
+                        down_chiffre_2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+                        down_chiffre_2.setText("\\/");
+                        getContentPane().add(down_chiffre_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 190, 60, 30));
 
-                        jButton8.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-                        jButton8.setText("\\/");
-                        getContentPane().add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 190, 60, 30));
+                        down_chiffre_3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+                        down_chiffre_3.setText("\\/");
+                        getContentPane().add(down_chiffre_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 190, 60, 30));
 
-                        jButton9.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-                        jButton9.setText("\\/");
-                        getContentPane().add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 190, 60, 30));
+                        down_chiffre_4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+                        down_chiffre_4.setText("\\/");
+                        getContentPane().add(down_chiffre_4, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 190, 60, 30));
 
-                        jButton10.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-                        jButton10.setText("TESTER");
-                        getContentPane().add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 130, 120, 40));
+                        bouton_tester.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+                        bouton_tester.setText("TESTER");
+                        getContentPane().add(bouton_tester, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 130, 120, 40));
 
                         pack();
                     }// </editor-fold>//GEN-END:initComponents
@@ -169,9 +169,9 @@ public class fenetre_cadenas extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_bouton_recommencerActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void up_chiffre_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_up_chiffre_1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_up_chiffre_1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -200,27 +200,27 @@ public class fenetre_cadenas extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bouton_recommencer;
-    private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
+    private javax.swing.JButton bouton_tester;
+    private javax.swing.JButton down_chiffre_1;
+    private javax.swing.JButton down_chiffre_2;
+    private javax.swing.JButton down_chiffre_3;
+    private javax.swing.JButton down_chiffre_4;
+    private javax.swing.JLabel texte_chiffre_0;
+    private javax.swing.JLabel texte_chiffre_1;
+    private javax.swing.JLabel texte_chiffre_2;
+    private javax.swing.JLabel texte_chiffre_3;
+    private javax.swing.JLabel texte_intro;
+    private javax.swing.JLabel texte_lbl__nb_chiffres_bas;
+    private javax.swing.JLabel texte_lbl_nb_chiffres_exacts;
+    private javax.swing.JLabel texte_lbl_nb_chiffres_haut;
+    private javax.swing.JLabel texte_nb_chiffre_haut;
+    private javax.swing.JLabel texte_nb_chiffres_bas;
+    private javax.swing.JLabel texte_nb_chiffres_exacts;
+    private javax.swing.JLabel texte_score;
+    private javax.swing.JLabel texte_tentatives;
+    private javax.swing.JButton up_chiffre_1;
+    private javax.swing.JButton up_chiffre_2;
+    private javax.swing.JButton up_chiffre_3;
+    private javax.swing.JButton up_chiffre_4;
     // End of variables declaration//GEN-END:variables
 }
