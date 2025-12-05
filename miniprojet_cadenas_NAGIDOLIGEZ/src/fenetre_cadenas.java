@@ -50,6 +50,7 @@ public class fenetre_cadenas extends javax.swing.JFrame {
         down_chiffre_3 = new javax.swing.JButton();
         down_chiffre_4 = new javax.swing.JButton();
         bouton_tester = new javax.swing.JButton();
+        texte_perdu = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -162,6 +163,11 @@ public class fenetre_cadenas extends javax.swing.JFrame {
                         bouton_tester.setText("TESTER");
                         getContentPane().add(bouton_tester, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 130, 120, 40));
 
+                        texte_perdu.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+                        texte_perdu.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                        texte_perdu.setText("perdu ou gagné (mettre rien avant de lancer)");
+                        getContentPane().add(texte_perdu, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 400, 210, 60));
+
                         pack();
                     }// </editor-fold>//GEN-END:initComponents
 
@@ -216,6 +222,7 @@ public class fenetre_cadenas extends javax.swing.JFrame {
     private javax.swing.JLabel texte_nb_chiffre_haut;
     private javax.swing.JLabel texte_nb_chiffres_bas;
     private javax.swing.JLabel texte_nb_chiffres_exacts;
+    private javax.swing.JLabel texte_perdu;
     private javax.swing.JLabel texte_score;
     private javax.swing.JLabel texte_tentatives;
     private javax.swing.JButton up_chiffre_1;
