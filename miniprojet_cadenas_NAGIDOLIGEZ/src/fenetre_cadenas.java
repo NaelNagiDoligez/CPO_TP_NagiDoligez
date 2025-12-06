@@ -39,6 +39,8 @@ private void resetAffichage() {
     
     texte_intro.setText("Trouvez le bon code en moins de " 
                     + jeu.getMaxTentatives() + " tentative(s) :");
+    
+    zone_historique.setText("");
 
 }
 
@@ -87,6 +89,7 @@ private void mettreAJourTexteIntro() {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPasswordField1 = new javax.swing.JPasswordField();
         texte_intro = new javax.swing.JLabel();
         texte_chiffre_4 = new javax.swing.JLabel();
         texte_chiffre_1 = new javax.swing.JLabel();
@@ -112,13 +115,18 @@ private void mettreAJourTexteIntro() {
         bouton_accueil = new javax.swing.JButton();
         texte_perdu = new javax.swing.JLabel();
         bouton_recommencer = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        zone_historique = new javax.swing.JTextArea();
+        jLabel1 = new javax.swing.JLabel();
+
+        jPasswordField1.setText("jPasswordField1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         texte_intro.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        texte_intro.setText("Trouvez le bon code en moins de 5 tentatives :");
-        getContentPane().add(texte_intro, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 22, 370, 40));
+        texte_intro.setText("Trouvez le bon code en moins de 5 tentative(s) :");
+        getContentPane().add(texte_intro, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 370, 40));
 
         texte_chiffre_4.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         texte_chiffre_4.setText("0");
@@ -164,15 +172,15 @@ private void mettreAJourTexteIntro() {
         texte_nb_chiffres_haut.setText("0");
         getContentPane().add(texte_nb_chiffres_haut, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 290, 30, 30));
 
-        texte_tentatives.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        texte_tentatives.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         texte_tentatives.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         texte_tentatives.setText("Tentatives :");
-        getContentPane().add(texte_tentatives, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 240, 110, 30));
+        getContentPane().add(texte_tentatives, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 260, 120, 30));
 
         texte_score.setFont(new java.awt.Font("Segoe UI", 1, 22)); // NOI18N
         texte_score.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         texte_score.setText("0 sur 5");
-        getContentPane().add(texte_score, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 270, 110, 80));
+        getContentPane().add(texte_score, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 280, 120, 60));
 
         up_chiffre_1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         up_chiffre_1.setText("/\\");
@@ -253,7 +261,7 @@ private void mettreAJourTexteIntro() {
                                 bouton_testerActionPerformed(evt);
                             }
                         });
-                        getContentPane().add(bouton_tester, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 130, 120, 40));
+                        getContentPane().add(bouton_tester, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 180, 120, 40));
 
                         bouton_accueil.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
                         bouton_accueil.setText("ACCUEIL");
@@ -265,7 +273,7 @@ private void mettreAJourTexteIntro() {
                         getContentPane().add(bouton_accueil, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 420, 190, 40));
 
                         texte_perdu.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-                        texte_perdu.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                        texte_perdu.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
                         texte_perdu.setText("perdu ou gagné");
                         getContentPane().add(texte_perdu, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 400, 330, 60));
 
@@ -277,6 +285,20 @@ private void mettreAJourTexteIntro() {
                             }
                         });
                         getContentPane().add(bouton_recommencer, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 360, 190, 40));
+
+                        zone_historique.setEditable(false);
+                        zone_historique.setColumns(20);
+                        zone_historique.setLineWrap(true);
+                        zone_historique.setRows(5);
+                        zone_historique.setWrapStyleWord(true);
+                        jScrollPane1.setViewportView(zone_historique);
+
+                        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 50, 120, 120));
+
+                        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+                        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+                        jLabel1.setText("Historique :");
+                        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 10, 120, 30));
 
                         pack();
                     }// </editor-fold>//GEN-END:initComponents
@@ -364,6 +386,13 @@ private void mettreAJourTexteIntro() {
 
     // 2) Demander au moteur du jeu de tester la combinaison
     ResultatEssai res = jeu.testerCombinaison(proposition);
+    
+// Construction d'une ligne d'historique pour cet essai
+String ligne = "Essai " + jeu.getNbTentatives()
+        + " : " + proposition.toString();
+
+// Ajout dans la zone d'historique
+zone_historique.append(ligne + "\n");
 
     // 3) Afficher les résultats dans les labels
     texte_nb_chiffres_exacts.setText(
@@ -435,6 +464,9 @@ if (res.isGagne()) {
     private javax.swing.JButton down_chiffre_2;
     private javax.swing.JButton down_chiffre_3;
     private javax.swing.JButton down_chiffre_4;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JPasswordField jPasswordField1;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel texte_chiffre_1;
     private javax.swing.JLabel texte_chiffre_2;
     private javax.swing.JLabel texte_chiffre_3;
@@ -453,5 +485,6 @@ if (res.isGagne()) {
     private javax.swing.JButton up_chiffre_2;
     private javax.swing.JButton up_chiffre_3;
     private javax.swing.JButton up_chiffre_4;
+    private javax.swing.JTextArea zone_historique;
     // End of variables declaration//GEN-END:variables
 }
