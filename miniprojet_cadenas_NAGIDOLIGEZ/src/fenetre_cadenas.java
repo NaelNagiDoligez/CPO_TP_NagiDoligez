@@ -1,3 +1,5 @@
+import java.awt.Color;
+
 public class fenetre_cadenas extends javax.swing.JFrame {
     
     private JeuCadenas jeu;
@@ -377,18 +379,18 @@ private void mettreAJourTexteIntro() {
 
     mettreAJourTexteIntro();
 
-    // 4) Gérer les messages gagné / perdu / réessayer
-    if (res.isGagne()) {
-        texte_perdu.setText("Gagné !");
-        bouton_tester.setEnabled(false);      // on bloque le jeu
-    } else if (jeu.isTermine()) {
-        // Pas gagné, mais plus de tentatives = perdu
-        texte_perdu.setText("Perdu... nombre d'essais atteint.");
-        bouton_tester.setEnabled(false);
-    } else {
-        // Pas encore fini, on invite à réessayer
-        texte_perdu.setText("Perdu, réessayez !");
-    }
+if (res.isGagne()) {
+    texte_perdu.setForeground(Color.GREEN);
+    texte_perdu.setText("Gagné !");
+    bouton_tester.setEnabled(false);
+} else if (jeu.isTermine()) {
+    texte_perdu.setForeground(Color.RED);
+    texte_perdu.setText("Perdu... nombre d'essais atteint.");
+    bouton_tester.setEnabled(false);
+} else {
+    texte_perdu.setForeground(Color.BLACK);
+    texte_perdu.setText("Perdu, réessayez !");
+}
 
     }//GEN-LAST:event_bouton_testerActionPerformed
 
