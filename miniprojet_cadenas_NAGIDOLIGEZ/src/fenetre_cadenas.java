@@ -28,10 +28,10 @@ public class fenetre_cadenas extends javax.swing.JFrame {
     private void initComponents() {
 
         texte_intro = new javax.swing.JLabel();
-        texte_chiffre_3 = new javax.swing.JLabel();
-        texte_chiffre_0 = new javax.swing.JLabel();
+        texte_chiffre_4 = new javax.swing.JLabel();
         texte_chiffre_1 = new javax.swing.JLabel();
         texte_chiffre_2 = new javax.swing.JLabel();
+        texte_chiffre_3 = new javax.swing.JLabel();
         texte_lbl__nb_chiffres_bas = new javax.swing.JLabel();
         texte_lbl_nb_chiffres_exacts = new javax.swing.JLabel();
         texte_lbl_nb_chiffres_haut = new javax.swing.JLabel();
@@ -59,25 +59,25 @@ public class fenetre_cadenas extends javax.swing.JFrame {
         texte_intro.setText("Trouvez le bon code en moins de 5 tentatives :");
         getContentPane().add(texte_intro, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 22, 370, 40));
 
-        texte_chiffre_3.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
-        texte_chiffre_3.setText("0");
-        texte_chiffre_3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        getContentPane().add(texte_chiffre_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 110, 40, 85));
-
-        texte_chiffre_0.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
-        texte_chiffre_0.setText("0");
-        texte_chiffre_0.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        getContentPane().add(texte_chiffre_0, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, 40, 85));
+        texte_chiffre_4.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        texte_chiffre_4.setText("0");
+        texte_chiffre_4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(texte_chiffre_4, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 110, 40, 85));
 
         texte_chiffre_1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         texte_chiffre_1.setText("0");
         texte_chiffre_1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        getContentPane().add(texte_chiffre_1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 110, 40, 85));
+        getContentPane().add(texte_chiffre_1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, 40, 85));
 
         texte_chiffre_2.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         texte_chiffre_2.setText("0");
         texte_chiffre_2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        getContentPane().add(texte_chiffre_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 110, 40, 85));
+        getContentPane().add(texte_chiffre_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 110, 40, 85));
+
+        texte_chiffre_3.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        texte_chiffre_3.setText("0");
+        texte_chiffre_3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(texte_chiffre_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 110, 40, 85));
 
         texte_lbl__nb_chiffres_bas.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         texte_lbl__nb_chiffres_bas.setText("Nombre de chiffres trop bas :");
@@ -211,10 +211,10 @@ public class fenetre_cadenas extends javax.swing.JFrame {
     private javax.swing.JButton down_chiffre_2;
     private javax.swing.JButton down_chiffre_3;
     private javax.swing.JButton down_chiffre_4;
-    private javax.swing.JLabel texte_chiffre_0;
     private javax.swing.JLabel texte_chiffre_1;
     private javax.swing.JLabel texte_chiffre_2;
     private javax.swing.JLabel texte_chiffre_3;
+    private javax.swing.JLabel texte_chiffre_4;
     private javax.swing.JLabel texte_intro;
     private javax.swing.JLabel texte_lbl__nb_chiffres_bas;
     private javax.swing.JLabel texte_lbl_nb_chiffres_exacts;

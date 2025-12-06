@@ -38,7 +38,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JLabel" name="texte_chiffre_3">
+    <Component class="javax.swing.JLabel" name="texte_chiffre_4">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="36" style="1"/>
@@ -52,7 +52,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JLabel" name="texte_chiffre_0">
+    <Component class="javax.swing.JLabel" name="texte_chiffre_1">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="36" style="1"/>
@@ -66,7 +66,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JLabel" name="texte_chiffre_1">
+    <Component class="javax.swing.JLabel" name="texte_chiffre_2">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="36" style="1"/>
@@ -80,7 +80,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JLabel" name="texte_chiffre_2">
+    <Component class="javax.swing.JLabel" name="texte_chiffre_3">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="36" style="1"/>
