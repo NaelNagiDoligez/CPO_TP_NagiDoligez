@@ -1,22 +1,50 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
-
-/**
- *
- * @author jacqu
- */
 public class fenetre_cadenas extends javax.swing.JFrame {
     
+    private JeuCadenas jeu;
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(fenetre_cadenas.class.getName());
 
-    /**
-     * Creates new form fenetre_cadenas
-     */
-    public fenetre_cadenas() {
-        initComponents();
+public fenetre_cadenas() {
+    initComponents();
+    jeu = new JeuCadenas(); // ⭐ moteur du jeu
+    resetAffichage();       // ⭐ affiche tout à zéro au lancement
+}
+
+private void resetAffichage() {
+
+    // Réinitialiser les 4 chiffres affichés à 0
+    texte_chiffre_1.setText("0");
+    texte_chiffre_2.setText("0");
+    texte_chiffre_3.setText("0");
+    texte_chiffre_4.setText("0");
+
+    // Réinitialiser les compteurs
+    texte_nb_chiffres_exacts.setText("0");
+    texte_nb_chiffres_bas.setText("0");
+    texte_nb_chiffres_haut.setText("0");
+    texte_tentatives.setText("0 sur " + jeu.getMaxTentatives());
+
+    // Enlever le message "perdu" ou "gagné"
+    texte_perdu.setText("");
+
+    // Réactiver le bouton Tester
+    bouton_tester.setEnabled(true);
+}
+
+// Lit le chiffre affiché dans un JLabel (0 à 9)
+private int lireChiffre(javax.swing.JLabel label) {
+    return Integer.parseInt(label.getText());
+}
+
+// Met à jour le JLabel avec une nouvelle valeur (0 à 9)
+private void setChiffre(javax.swing.JLabel label, int valeur) {
+    if (valeur < 0) {
+        valeur = 0;
     }
+    if (valeur > 9) {
+        valeur = 9;
+    }
+    label.setText(Integer.toString(valeur));
+}
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -37,10 +65,9 @@ public class fenetre_cadenas extends javax.swing.JFrame {
         texte_lbl_nb_chiffres_haut = new javax.swing.JLabel();
         texte_nb_chiffres_bas = new javax.swing.JLabel();
         texte_nb_chiffres_exacts = new javax.swing.JLabel();
-        texte_nb_chiffre_haut = new javax.swing.JLabel();
+        texte_nb_chiffres_haut = new javax.swing.JLabel();
         texte_tentatives = new javax.swing.JLabel();
         texte_score = new javax.swing.JLabel();
-        bouton_recommencer = new javax.swing.JButton();
         up_chiffre_1 = new javax.swing.JButton();
         up_chiffre_2 = new javax.swing.JButton();
         up_chiffre_3 = new javax.swing.JButton();
@@ -50,6 +77,7 @@ public class fenetre_cadenas extends javax.swing.JFrame {
         down_chiffre_3 = new javax.swing.JButton();
         down_chiffre_4 = new javax.swing.JButton();
         bouton_tester = new javax.swing.JButton();
+        bouton_recommencer = new javax.swing.JButton();
         texte_perdu = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -99,9 +127,9 @@ public class fenetre_cadenas extends javax.swing.JFrame {
         texte_nb_chiffres_exacts.setText("0");
         getContentPane().add(texte_nb_chiffres_exacts, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 250, 30, 30));
 
-        texte_nb_chiffre_haut.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        texte_nb_chiffre_haut.setText("0");
-        getContentPane().add(texte_nb_chiffre_haut, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 290, 30, 30));
+        texte_nb_chiffres_haut.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        texte_nb_chiffres_haut.setText("0");
+        getContentPane().add(texte_nb_chiffres_haut, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 290, 30, 30));
 
         texte_tentatives.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         texte_tentatives.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -112,15 +140,6 @@ public class fenetre_cadenas extends javax.swing.JFrame {
         texte_score.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         texte_score.setText("0 sur 5");
         getContentPane().add(texte_score, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 270, 110, 80));
-
-        bouton_recommencer.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        bouton_recommencer.setText("RECOMMENCER");
-        bouton_recommencer.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bouton_recommencerActionPerformed(evt);
-            }
-        });
-        getContentPane().add(bouton_recommencer, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 360, 190, 40));
 
         up_chiffre_1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         up_chiffre_1.setText("/\\");
@@ -133,35 +152,79 @@ public class fenetre_cadenas extends javax.swing.JFrame {
 
             up_chiffre_2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
             up_chiffre_2.setText("/\\");
+                up_chiffre_2.addActionListener(new java.awt.event.ActionListener() {
+                    public void actionPerformed(java.awt.event.ActionEvent evt) {
+                        up_chiffre_2ActionPerformed(evt);
+                    }
+                });
                 getContentPane().add(up_chiffre_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 90, 60, 30));
 
                 up_chiffre_3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
                 up_chiffre_3.setText("/\\");
+                    up_chiffre_3.addActionListener(new java.awt.event.ActionListener() {
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                            up_chiffre_3ActionPerformed(evt);
+                        }
+                    });
                     getContentPane().add(up_chiffre_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 90, 60, 30));
 
                     up_chiffre_4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
                     up_chiffre_4.setText("/\\");
+                        up_chiffre_4.addActionListener(new java.awt.event.ActionListener() {
+                            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                up_chiffre_4ActionPerformed(evt);
+                            }
+                        });
                         getContentPane().add(up_chiffre_4, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 90, 60, 30));
 
                         down_chiffre_1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
                         down_chiffre_1.setText("\\/");
+                        down_chiffre_1.addActionListener(new java.awt.event.ActionListener() {
+                            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                down_chiffre_1ActionPerformed(evt);
+                            }
+                        });
                         getContentPane().add(down_chiffre_1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 60, 30));
 
                         down_chiffre_2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
                         down_chiffre_2.setText("\\/");
+                        down_chiffre_2.addActionListener(new java.awt.event.ActionListener() {
+                            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                down_chiffre_2ActionPerformed(evt);
+                            }
+                        });
                         getContentPane().add(down_chiffre_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 190, 60, 30));
 
                         down_chiffre_3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
                         down_chiffre_3.setText("\\/");
+                        down_chiffre_3.addActionListener(new java.awt.event.ActionListener() {
+                            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                down_chiffre_3ActionPerformed(evt);
+                            }
+                        });
                         getContentPane().add(down_chiffre_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 190, 60, 30));
 
                         down_chiffre_4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
                         down_chiffre_4.setText("\\/");
+                        down_chiffre_4.addActionListener(new java.awt.event.ActionListener() {
+                            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                down_chiffre_4ActionPerformed(evt);
+                            }
+                        });
                         getContentPane().add(down_chiffre_4, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 190, 60, 30));
 
                         bouton_tester.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
                         bouton_tester.setText("TESTER");
                         getContentPane().add(bouton_tester, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 130, 120, 40));
+
+                        bouton_recommencer.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+                        bouton_recommencer.setText("RECOMMENCER");
+                        bouton_recommencer.addActionListener(new java.awt.event.ActionListener() {
+                            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                bouton_recommencerActionPerformed(evt);
+                            }
+                        });
+                        getContentPane().add(bouton_recommencer, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 360, 190, 40));
 
                         texte_perdu.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
                         texte_perdu.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -176,8 +239,68 @@ public class fenetre_cadenas extends javax.swing.JFrame {
     }//GEN-LAST:event_bouton_recommencerActionPerformed
 
     private void up_chiffre_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_up_chiffre_1ActionPerformed
-        // testTODO add your handling code here:
+    int val = lireChiffre(texte_chiffre_1);
+    if (val < 9) {
+        val++;
+    }
+    setChiffre(texte_chiffre_1, val); 
     }//GEN-LAST:event_up_chiffre_1ActionPerformed
+
+    private void up_chiffre_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_up_chiffre_2ActionPerformed
+    int val = lireChiffre(texte_chiffre_2);
+    if (val < 9) {
+        val++;
+    }
+    setChiffre(texte_chiffre_2, val);
+    }//GEN-LAST:event_up_chiffre_2ActionPerformed
+
+    private void up_chiffre_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_up_chiffre_3ActionPerformed
+    int val = lireChiffre(texte_chiffre_3);
+    if (val < 9) {
+        val++;
+    }
+    setChiffre(texte_chiffre_3, val);
+    }//GEN-LAST:event_up_chiffre_3ActionPerformed
+
+    private void up_chiffre_4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_up_chiffre_4ActionPerformed
+    int val = lireChiffre(texte_chiffre_4);
+    if (val < 9) {
+        val++;
+    }
+    setChiffre(texte_chiffre_4, val);
+    }//GEN-LAST:event_up_chiffre_4ActionPerformed
+
+    private void down_chiffre_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_down_chiffre_1ActionPerformed
+    int val = lireChiffre(texte_chiffre_1);
+    if (val > 0) {
+        val--;
+    }
+    setChiffre(texte_chiffre_1, val);
+    }//GEN-LAST:event_down_chiffre_1ActionPerformed
+
+    private void down_chiffre_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_down_chiffre_2ActionPerformed
+    int val = lireChiffre(texte_chiffre_2);
+    if (val > 0) {
+        val--;
+    }
+    setChiffre(texte_chiffre_2, val);
+    }//GEN-LAST:event_down_chiffre_2ActionPerformed
+
+    private void down_chiffre_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_down_chiffre_3ActionPerformed
+    int val = lireChiffre(texte_chiffre_3);
+    if (val > 0) {
+        val--;
+    }
+    setChiffre(texte_chiffre_3, val);
+    }//GEN-LAST:event_down_chiffre_3ActionPerformed
+
+    private void down_chiffre_4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_down_chiffre_4ActionPerformed
+    int val = lireChiffre(texte_chiffre_4);
+    if (val > 0) {
+        val--;
+    }
+    setChiffre(texte_chiffre_4, val);
+    }//GEN-LAST:event_down_chiffre_4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -219,9 +342,9 @@ public class fenetre_cadenas extends javax.swing.JFrame {
     private javax.swing.JLabel texte_lbl__nb_chiffres_bas;
     private javax.swing.JLabel texte_lbl_nb_chiffres_exacts;
     private javax.swing.JLabel texte_lbl_nb_chiffres_haut;
-    private javax.swing.JLabel texte_nb_chiffre_haut;
     private javax.swing.JLabel texte_nb_chiffres_bas;
     private javax.swing.JLabel texte_nb_chiffres_exacts;
+    private javax.swing.JLabel texte_nb_chiffres_haut;
     private javax.swing.JLabel texte_perdu;
     private javax.swing.JLabel texte_score;
     private javax.swing.JLabel texte_tentatives;
