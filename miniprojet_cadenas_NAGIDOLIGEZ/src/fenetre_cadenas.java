@@ -32,7 +32,7 @@ private void resetAffichage() {
     bouton_tester.setEnabled(true);
     
     texte_intro.setText("Trouvez le bon code en moins de " 
-                    + jeu.getMaxTentatives() + " tentatives :");
+                    + jeu.getMaxTentatives() + " tentative(s) :");
 
 }
 
@@ -68,7 +68,7 @@ private void mettreAJourTexteIntro() {
     int restantes = max - faites;
 
     if (!jeu.isTermine()) {
-        texte_intro.setText("Trouvez le bon code en moins de " +restantes+" tentatives :");
+        texte_intro.setText("Trouvez le bon code en moins de " +restantes+" tentative(s) :");
     }
 }
 
@@ -266,7 +266,11 @@ private void mettreAJourTexteIntro() {
                     }// </editor-fold>//GEN-END:initComponents
 
     private void bouton_recommencerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bouton_recommencerActionPerformed
-        // TODO add your handling code here:
+    // On relance une nouvelle partie côté logique
+    jeu.recommencer();
+
+    // On remet l'affichage à zéro
+    resetAffichage();
     }//GEN-LAST:event_bouton_recommencerActionPerformed
 
     private void up_chiffre_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_up_chiffre_1ActionPerformed
