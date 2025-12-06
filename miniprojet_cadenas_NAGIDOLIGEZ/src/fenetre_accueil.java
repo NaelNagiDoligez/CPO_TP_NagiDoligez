@@ -7,7 +7,9 @@ public class fenetre_accueil extends javax.swing.JFrame {
      */
     public fenetre_accueil() {
         initComponents();
-    }
+    this.setSize(600, 500);
+    this.setLocationRelativeTo(null);
+}
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -24,17 +26,14 @@ public class fenetre_accueil extends javax.swing.JFrame {
         bouton_lancer = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         texte_titre.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         texte_titre.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         texte_titre.setText("TROUVER LE CODE");
-        getContentPane().add(texte_titre, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 40, 400, 80));
 
         texte_phrase.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         texte_phrase.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         texte_phrase.setText("Choisissez le nombre de tentatives");
-        getContentPane().add(texte_phrase, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 150, 400, 50));
 
         slider_tentatives.setMajorTickSpacing(2);
         slider_tentatives.setMaximum(15);
@@ -46,7 +45,6 @@ public class fenetre_accueil extends javax.swing.JFrame {
                 slider_tentativesStateChanged(evt);
             }
         });
-        getContentPane().add(slider_tentatives, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 530, 60));
 
         bouton_lancer.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         bouton_lancer.setText("LANCER");
@@ -55,7 +53,40 @@ public class fenetre_accueil extends javax.swing.JFrame {
                 bouton_lancerActionPerformed(evt);
             }
         });
-        getContentPane().add(bouton_lancer, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 340, 130, 40));
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(80, 80, 80)
+                        .addComponent(texte_titre, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(80, 80, 80)
+                        .addComponent(texte_phrase, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(slider_tentatives, javax.swing.GroupLayout.PREFERRED_SIZE, 530, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(220, 220, 220)
+                        .addComponent(bouton_lancer, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(25, Short.MAX_VALUE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addComponent(texte_titre, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
+                .addComponent(texte_phrase, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
+                .addComponent(slider_tentatives, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(50, 50, 50)
+                .addComponent(bouton_lancer, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(104, Short.MAX_VALUE))
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

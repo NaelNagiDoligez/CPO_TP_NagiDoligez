@@ -1,84 +1,86 @@
+
 import java.awt.Color;
 
 public class fenetre_cadenas extends javax.swing.JFrame {
-    
+
     private JeuCadenas jeu;
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(fenetre_cadenas.class.getName());
 
-public fenetre_cadenas() {
-    this(5); // par défaut 5 tentatives si on n’en donne pas
-}
+    public fenetre_cadenas() {
+        this(5); // par défaut 5 tentatives si on n’en donne pas
+    }
 
-public fenetre_cadenas(int maxTentatives) {
-    initComponents();
-    jeu = new JeuCadenas(maxTentatives);
-    resetAffichage();
-}
+    public fenetre_cadenas(int maxTentatives) {
+        initComponents();
+        this.setSize(600, 520);
+        this.setLocationRelativeTo(null);
+        jeu = new JeuCadenas(maxTentatives);
+        resetAffichage();
+    }
 
-private void resetAffichage() {
+    private void resetAffichage() {
 
-    // Réinitialiser les 4 chiffres affichés à 0
-    texte_chiffre_1.setText("0");
-    texte_chiffre_2.setText("0");
-    texte_chiffre_3.setText("0");
-    texte_chiffre_4.setText("0");
+        // Réinitialiser les 4 chiffres affichés à 0
+        texte_chiffre_1.setText("0");
+        texte_chiffre_2.setText("0");
+        texte_chiffre_3.setText("0");
+        texte_chiffre_4.setText("0");
 
-    // Réinitialiser les compteurs
-    texte_nb_chiffres_exacts.setText("0");
-    texte_nb_chiffres_haut.setText("0");
-    texte_nb_chiffres_bas.setText("0");
+        // Réinitialiser les compteurs
+        texte_nb_chiffres_exacts.setText("0");
+        texte_nb_chiffres_haut.setText("0");
+        texte_nb_chiffres_bas.setText("0");
 
-    // "0 sur 5" (ou 0 sur maxTentatives)
-    texte_score.setText("0 sur " + jeu.getMaxTentatives());
+        // "0 sur 5" (ou 0 sur maxTentatives)
+        texte_score.setText("0 sur " + jeu.getMaxTentatives());
 
-    // Enlever message perdu/gagné
-    texte_perdu.setText("");
+        // Enlever message perdu/gagné
+        texte_perdu.setText("");
 
-    // Réactiver le bouton Tester
-    bouton_tester.setEnabled(true);
-    
-    texte_intro.setText("Trouvez le bon code en moins de " 
-                    + jeu.getMaxTentatives() + " tentative(s) :");
-    
-    zone_historique.setText("");
+        // Réactiver le bouton Tester
+        bouton_tester.setEnabled(true);
 
-}
+        texte_intro.setText("Trouvez le bon code en moins de "
+                + jeu.getMaxTentatives() + " tentative(s) :");
 
+        zone_historique.setText("");
+
+    }
 
 // Lit le chiffre affiché dans un JLabel (0 à 9)
-private int lireChiffre(javax.swing.JLabel label) {
-    return Integer.parseInt(label.getText());
-}
+    private int lireChiffre(javax.swing.JLabel label) {
+        return Integer.parseInt(label.getText());
+    }
 
 // Met à jour le JLabel avec une nouvelle valeur (0 à 9)
-private void setChiffre(javax.swing.JLabel label, int valeur) {
-    if (valeur < 0) {
-        valeur = 0;
+    private void setChiffre(javax.swing.JLabel label, int valeur) {
+        if (valeur < 0) {
+            valeur = 0;
+        }
+        if (valeur > 9) {
+            valeur = 9;
+        }
+        label.setText(Integer.toString(valeur));
     }
-    if (valeur > 9) {
-        valeur = 9;
-    }
-    label.setText(Integer.toString(valeur));
-}
 
 // Construit un objet Code à partir des 4 labels de chiffres
-private Code lireCodePropose() {
-    int c1 = lireChiffre(texte_chiffre_1);
-    int c2 = lireChiffre(texte_chiffre_2);
-    int c3 = lireChiffre(texte_chiffre_3);
-    int c4 = lireChiffre(texte_chiffre_4);
-    return new Code(c1, c2, c3, c4);
-}
-
-private void mettreAJourTexteIntro() {
-    int faites = jeu.getNbTentatives();
-    int max = jeu.getMaxTentatives();
-    int restantes = max - faites;
-
-    if (!jeu.isTermine()) {
-        texte_intro.setText("Trouvez le bon code en moins de " +restantes+" tentative(s) :");
+    private Code lireCodePropose() {
+        int c1 = lireChiffre(texte_chiffre_1);
+        int c2 = lireChiffre(texte_chiffre_2);
+        int c3 = lireChiffre(texte_chiffre_3);
+        int c4 = lireChiffre(texte_chiffre_4);
+        return new Code(c1, c2, c3, c4);
     }
-}
+
+    private void mettreAJourTexteIntro() {
+        int faites = jeu.getNbTentatives();
+        int max = jeu.getMaxTentatives();
+        int restantes = max - faites;
+
+        if (!jeu.isTermine()) {
+            texte_intro.setText("Trouvez le bon code en moins de " + restantes + " tentative(s) :");
+        }
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -304,131 +306,131 @@ private void mettreAJourTexteIntro() {
                     }// </editor-fold>//GEN-END:initComponents
 
     private void bouton_accueilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bouton_accueilActionPerformed
-    // Ouvrir l'écran d'accueil
-    fenetre_accueil accueil = new fenetre_accueil();
-    accueil.setLocationRelativeTo(null); // centre la fenêtre
-    accueil.setVisible(true);
+        // Ouvrir l'écran d'accueil
+        fenetre_accueil accueil = new fenetre_accueil();
+        accueil.setLocationRelativeTo(null); // centre la fenêtre
+        accueil.setVisible(true);
 
-    // Fermer l'écran de jeu
-    this.dispose();
+        // Fermer l'écran de jeu
+        this.dispose();
     }//GEN-LAST:event_bouton_accueilActionPerformed
 
     private void up_chiffre_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_up_chiffre_1ActionPerformed
-    int val = lireChiffre(texte_chiffre_1);
-    if (val < 9) {
-        val++;
-    }
-    setChiffre(texte_chiffre_1, val); 
+        int val = lireChiffre(texte_chiffre_1);
+        if (val < 9) {
+            val++;
+        }
+        setChiffre(texte_chiffre_1, val);
     }//GEN-LAST:event_up_chiffre_1ActionPerformed
 
     private void up_chiffre_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_up_chiffre_2ActionPerformed
-    int val = lireChiffre(texte_chiffre_2);
-    if (val < 9) {
-        val++;
-    }
-    setChiffre(texte_chiffre_2, val);
+        int val = lireChiffre(texte_chiffre_2);
+        if (val < 9) {
+            val++;
+        }
+        setChiffre(texte_chiffre_2, val);
     }//GEN-LAST:event_up_chiffre_2ActionPerformed
 
     private void up_chiffre_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_up_chiffre_3ActionPerformed
-    int val = lireChiffre(texte_chiffre_3);
-    if (val < 9) {
-        val++;
-    }
-    setChiffre(texte_chiffre_3, val);
+        int val = lireChiffre(texte_chiffre_3);
+        if (val < 9) {
+            val++;
+        }
+        setChiffre(texte_chiffre_3, val);
     }//GEN-LAST:event_up_chiffre_3ActionPerformed
 
     private void up_chiffre_4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_up_chiffre_4ActionPerformed
-    int val = lireChiffre(texte_chiffre_4);
-    if (val < 9) {
-        val++;
-    }
-    setChiffre(texte_chiffre_4, val);
+        int val = lireChiffre(texte_chiffre_4);
+        if (val < 9) {
+            val++;
+        }
+        setChiffre(texte_chiffre_4, val);
     }//GEN-LAST:event_up_chiffre_4ActionPerformed
 
     private void down_chiffre_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_down_chiffre_1ActionPerformed
-    int val = lireChiffre(texte_chiffre_1);
-    if (val > 0) {
-        val--;
-    }
-    setChiffre(texte_chiffre_1, val);
+        int val = lireChiffre(texte_chiffre_1);
+        if (val > 0) {
+            val--;
+        }
+        setChiffre(texte_chiffre_1, val);
     }//GEN-LAST:event_down_chiffre_1ActionPerformed
 
     private void down_chiffre_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_down_chiffre_2ActionPerformed
-    int val = lireChiffre(texte_chiffre_2);
-    if (val > 0) {
-        val--;
-    }
-    setChiffre(texte_chiffre_2, val);
+        int val = lireChiffre(texte_chiffre_2);
+        if (val > 0) {
+            val--;
+        }
+        setChiffre(texte_chiffre_2, val);
     }//GEN-LAST:event_down_chiffre_2ActionPerformed
 
     private void down_chiffre_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_down_chiffre_3ActionPerformed
-    int val = lireChiffre(texte_chiffre_3);
-    if (val > 0) {
-        val--;
-    }
-    setChiffre(texte_chiffre_3, val);
+        int val = lireChiffre(texte_chiffre_3);
+        if (val > 0) {
+            val--;
+        }
+        setChiffre(texte_chiffre_3, val);
     }//GEN-LAST:event_down_chiffre_3ActionPerformed
 
     private void down_chiffre_4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_down_chiffre_4ActionPerformed
-    int val = lireChiffre(texte_chiffre_4);
-    if (val > 0) {
-        val--;
-    }
-    setChiffre(texte_chiffre_4, val);
+        int val = lireChiffre(texte_chiffre_4);
+        if (val > 0) {
+            val--;
+        }
+        setChiffre(texte_chiffre_4, val);
     }//GEN-LAST:event_down_chiffre_4ActionPerformed
 
     private void bouton_testerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bouton_testerActionPerformed
-    // On efface l’ancien message temporairement
-    texte_perdu.setText("");
+        // On efface l’ancien message temporairement
+        texte_perdu.setText("");
 
-    // 1) Lire le code proposé par le joueur
-    Code proposition = lireCodePropose();
+        // 1) Lire le code proposé par le joueur
+        Code proposition = lireCodePropose();
 
-    // 2) Demander au moteur du jeu de tester la combinaison
-    ResultatEssai res = jeu.testerCombinaison(proposition);
-    
+        // 2) Demander au moteur du jeu de tester la combinaison
+        ResultatEssai res = jeu.testerCombinaison(proposition);
+
 // Construction d'une ligne d'historique pour cet essai
-String ligne = "Essai " + jeu.getNbTentatives()
-        + " : " + proposition.toString();
+        String ligne = "Essai " + jeu.getNbTentatives()
+                + " : " + proposition.toString();
 
 // Ajout dans la zone d'historique
-zone_historique.append(ligne + "\n");
+        zone_historique.append(ligne + "\n");
 
-    // 3) Afficher les résultats dans les labels
-    texte_nb_chiffres_exacts.setText(
-            Integer.toString(res.getNbChiffresExacts()));
-    texte_nb_chiffres_haut.setText(
-            Integer.toString(res.getNbChiffresTropHauts()));
-    texte_nb_chiffres_bas.setText(
-            Integer.toString(res.getNbChiffresTropBas()));
+        // 3) Afficher les résultats dans les labels
+        texte_nb_chiffres_exacts.setText(
+                Integer.toString(res.getNbChiffresExacts()));
+        texte_nb_chiffres_haut.setText(
+                Integer.toString(res.getNbChiffresTropHauts()));
+        texte_nb_chiffres_bas.setText(
+                Integer.toString(res.getNbChiffresTropBas()));
 
-    // Mettre à jour "X sur 5"
-    texte_score.setText(jeu.getNbTentatives()
-            + " sur " + jeu.getMaxTentatives());
+        // Mettre à jour "X sur 5"
+        texte_score.setText(jeu.getNbTentatives()
+                + " sur " + jeu.getMaxTentatives());
 
-    mettreAJourTexteIntro();
+        mettreAJourTexteIntro();
 
-if (res.isGagne()) {
-    texte_perdu.setForeground(Color.GREEN);
-    texte_perdu.setText("Gagné !");
-    bouton_tester.setEnabled(false);
-} else if (jeu.isTermine()) {
-    texte_perdu.setForeground(Color.RED);
-    texte_perdu.setText("Perdu... nombre d'essais atteint.");
-    bouton_tester.setEnabled(false);
-} else {
-    texte_perdu.setForeground(Color.BLACK);
-    texte_perdu.setText("Perdu, réessayez !");
-}
+        if (res.isGagne()) {
+            texte_perdu.setForeground(Color.GREEN);
+            texte_perdu.setText("Gagné !");
+            bouton_tester.setEnabled(false);
+        } else if (jeu.isTermine()) {
+            texte_perdu.setForeground(Color.RED);
+            texte_perdu.setText("Perdu... nombre d'essais atteint.");
+            bouton_tester.setEnabled(false);
+        } else {
+            texte_perdu.setForeground(Color.BLACK);
+            texte_perdu.setText("Perdu, réessayez !");
+        }
 
     }//GEN-LAST:event_bouton_testerActionPerformed
 
     private void bouton_recommencerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bouton_recommencerActionPerformed
-     // On relance une nouvelle partie côté logique
-    jeu.recommencer();
+        // On relance une nouvelle partie côté logique
+        jeu.recommencer();
 
-    // On remet l'affichage à zéro
-    resetAffichage();
+        // On remet l'affichage à zéro
+        resetAffichage();
     }//GEN-LAST:event_bouton_recommencerActionPerformed
 
     /**
