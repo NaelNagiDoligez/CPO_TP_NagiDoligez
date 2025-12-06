@@ -34,7 +34,7 @@ public class fenetre_accueil extends javax.swing.JFrame {
         texte_phrase.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         texte_phrase.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         texte_phrase.setText("Choisissez le nombre de tentatives");
-        getContentPane().add(texte_phrase, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 160, 400, 50));
+        getContentPane().add(texte_phrase, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 150, 400, 50));
 
         slider_tentatives.setMajorTickSpacing(2);
         slider_tentatives.setMaximum(15);
@@ -61,7 +61,7 @@ public class fenetre_accueil extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void slider_tentativesStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_slider_tentativesStateChanged
-int val = slider_tentatives.getValue();
+
     }//GEN-LAST:event_slider_tentativesStateChanged
 
     private void bouton_lancerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bouton_lancerActionPerformed

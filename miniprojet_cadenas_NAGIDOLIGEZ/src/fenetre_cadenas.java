@@ -107,8 +107,9 @@ private void mettreAJourTexteIntro() {
         down_chiffre_3 = new javax.swing.JButton();
         down_chiffre_4 = new javax.swing.JButton();
         bouton_tester = new javax.swing.JButton();
-        bouton_recommencer = new javax.swing.JButton();
+        bouton_accueil = new javax.swing.JButton();
         texte_perdu = new javax.swing.JLabel();
+        bouton_recommencer = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -252,6 +253,20 @@ private void mettreAJourTexteIntro() {
                         });
                         getContentPane().add(bouton_tester, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 130, 120, 40));
 
+                        bouton_accueil.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+                        bouton_accueil.setText("ACCUEIL");
+                        bouton_accueil.addActionListener(new java.awt.event.ActionListener() {
+                            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                bouton_accueilActionPerformed(evt);
+                            }
+                        });
+                        getContentPane().add(bouton_accueil, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 420, 190, 40));
+
+                        texte_perdu.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+                        texte_perdu.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+                        texte_perdu.setText("perdu ou gagné");
+                        getContentPane().add(texte_perdu, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 400, 330, 60));
+
                         bouton_recommencer.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
                         bouton_recommencer.setText("RECOMMENCER");
                         bouton_recommencer.addActionListener(new java.awt.event.ActionListener() {
@@ -261,21 +276,18 @@ private void mettreAJourTexteIntro() {
                         });
                         getContentPane().add(bouton_recommencer, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 360, 190, 40));
 
-                        texte_perdu.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-                        texte_perdu.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-                        texte_perdu.setText("perdu ou gagné");
-                        getContentPane().add(texte_perdu, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 400, 330, 60));
-
                         pack();
                     }// </editor-fold>//GEN-END:initComponents
 
-    private void bouton_recommencerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bouton_recommencerActionPerformed
-    // On relance une nouvelle partie côté logique
-    jeu.recommencer();
+    private void bouton_accueilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bouton_accueilActionPerformed
+    // Ouvrir l'écran d'accueil
+    fenetre_accueil accueil = new fenetre_accueil();
+    accueil.setLocationRelativeTo(null); // centre la fenêtre
+    accueil.setVisible(true);
 
-    // On remet l'affichage à zéro
-    resetAffichage();
-    }//GEN-LAST:event_bouton_recommencerActionPerformed
+    // Fermer l'écran de jeu
+    this.dispose();
+    }//GEN-LAST:event_bouton_accueilActionPerformed
 
     private void up_chiffre_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_up_chiffre_1ActionPerformed
     int val = lireChiffre(texte_chiffre_1);
@@ -380,6 +392,14 @@ private void mettreAJourTexteIntro() {
 
     }//GEN-LAST:event_bouton_testerActionPerformed
 
+    private void bouton_recommencerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bouton_recommencerActionPerformed
+     // On relance une nouvelle partie côté logique
+    jeu.recommencer();
+
+    // On remet l'affichage à zéro
+    resetAffichage();
+    }//GEN-LAST:event_bouton_recommencerActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -406,6 +426,7 @@ private void mettreAJourTexteIntro() {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton bouton_accueil;
     private javax.swing.JButton bouton_recommencer;
     private javax.swing.JButton bouton_tester;
     private javax.swing.JButton down_chiffre_1;
