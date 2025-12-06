@@ -30,6 +30,10 @@ private void resetAffichage() {
 
     // Réactiver le bouton Tester
     bouton_tester.setEnabled(true);
+    
+    texte_intro.setText("Trouvez le bon code en moins de " 
+                    + jeu.getMaxTentatives() + " tentatives :");
+
 }
 
 
@@ -56,6 +60,16 @@ private Code lireCodePropose() {
     int c3 = lireChiffre(texte_chiffre_3);
     int c4 = lireChiffre(texte_chiffre_4);
     return new Code(c1, c2, c3, c4);
+}
+
+private void mettreAJourTexteIntro() {
+    int faites = jeu.getNbTentatives();
+    int max = jeu.getMaxTentatives();
+    int restantes = max - faites;
+
+    if (!jeu.isTermine()) {
+        texte_intro.setText("Trouvez le bon code en moins de " +restantes+" tentatives :");
+    }
 }
 
     /**
@@ -340,6 +354,8 @@ private Code lireCodePropose() {
     // Mettre à jour "X sur 5"
     texte_score.setText(jeu.getNbTentatives()
             + " sur " + jeu.getMaxTentatives());
+
+    mettreAJourTexteIntro();
 
     // 4) Gérer les messages gagné / perdu / réessayer
     if (res.isGagne()) {
