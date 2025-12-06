@@ -19,16 +19,19 @@ private void resetAffichage() {
 
     // Réinitialiser les compteurs
     texte_nb_chiffres_exacts.setText("0");
-    texte_nb_chiffres_bas.setText("0");
     texte_nb_chiffres_haut.setText("0");
-    texte_tentatives.setText("0 sur " + jeu.getMaxTentatives());
+    texte_nb_chiffres_bas.setText("0");
 
-    // Enlever le message "perdu" ou "gagné"
+    // "0 sur 5" (ou 0 sur maxTentatives)
+    texte_score.setText("0 sur " + jeu.getMaxTentatives());
+
+    // Enlever message perdu/gagné
     texte_perdu.setText("");
 
     // Réactiver le bouton Tester
     bouton_tester.setEnabled(true);
 }
+
 
 // Lit le chiffre affiché dans un JLabel (0 à 9)
 private int lireChiffre(javax.swing.JLabel label) {
@@ -44,6 +47,15 @@ private void setChiffre(javax.swing.JLabel label, int valeur) {
         valeur = 9;
     }
     label.setText(Integer.toString(valeur));
+}
+
+// Construit un objet Code à partir des 4 labels de chiffres
+private Code lireCodePropose() {
+    int c1 = lireChiffre(texte_chiffre_1);
+    int c2 = lireChiffre(texte_chiffre_2);
+    int c3 = lireChiffre(texte_chiffre_3);
+    int c4 = lireChiffre(texte_chiffre_4);
+    return new Code(c1, c2, c3, c4);
 }
 
     /**
@@ -215,6 +227,11 @@ private void setChiffre(javax.swing.JLabel label, int valeur) {
 
                         bouton_tester.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
                         bouton_tester.setText("TESTER");
+                        bouton_tester.addActionListener(new java.awt.event.ActionListener() {
+                            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                bouton_testerActionPerformed(evt);
+                            }
+                        });
                         getContentPane().add(bouton_tester, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 130, 120, 40));
 
                         bouton_recommencer.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -228,8 +245,8 @@ private void setChiffre(javax.swing.JLabel label, int valeur) {
 
                         texte_perdu.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
                         texte_perdu.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-                        texte_perdu.setText("perdu ou gagné (mettre rien avant de lancer)");
-                        getContentPane().add(texte_perdu, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 400, 210, 60));
+                        texte_perdu.setText("perdu ou gagné");
+                        getContentPane().add(texte_perdu, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 400, 330, 60));
 
                         pack();
                     }// </editor-fold>//GEN-END:initComponents
@@ -301,6 +318,43 @@ private void setChiffre(javax.swing.JLabel label, int valeur) {
     }
     setChiffre(texte_chiffre_4, val);
     }//GEN-LAST:event_down_chiffre_4ActionPerformed
+
+    private void bouton_testerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bouton_testerActionPerformed
+    // On efface l’ancien message temporairement
+    texte_perdu.setText("");
+
+    // 1) Lire le code proposé par le joueur
+    Code proposition = lireCodePropose();
+
+    // 2) Demander au moteur du jeu de tester la combinaison
+    ResultatEssai res = jeu.testerCombinaison(proposition);
+
+    // 3) Afficher les résultats dans les labels
+    texte_nb_chiffres_exacts.setText(
+            Integer.toString(res.getNbChiffresExacts()));
+    texte_nb_chiffres_haut.setText(
+            Integer.toString(res.getNbChiffresTropHauts()));
+    texte_nb_chiffres_bas.setText(
+            Integer.toString(res.getNbChiffresTropBas()));
+
+    // Mettre à jour "X sur 5"
+    texte_score.setText(jeu.getNbTentatives()
+            + " sur " + jeu.getMaxTentatives());
+
+    // 4) Gérer les messages gagné / perdu / réessayer
+    if (res.isGagne()) {
+        texte_perdu.setText("Gagné !");
+        bouton_tester.setEnabled(false);      // on bloque le jeu
+    } else if (jeu.isTermine()) {
+        // Pas gagné, mais plus de tentatives = perdu
+        texte_perdu.setText("Perdu... nombre d'essais atteint.");
+        bouton_tester.setEnabled(false);
+    } else {
+        // Pas encore fini, on invite à réessayer
+        texte_perdu.setText("Perdu, réessayez !");
+    }
+
+    }//GEN-LAST:event_bouton_testerActionPerformed
 
     /**
      * @param args the command line arguments

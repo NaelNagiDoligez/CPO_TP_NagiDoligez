@@ -335,6 +335,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="TESTER"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bouton_testerActionPerformed"/>
+      </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="420" y="130" width="120" height="40"/>
@@ -363,11 +366,11 @@
           <Font name="Segoe UI" size="18" style="1"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
-        <Property name="text" type="java.lang.String" value="perdu ou gagn&#xe9; (mettre rien avant de lancer)"/>
+        <Property name="text" type="java.lang.String" value="perdu ou gagn&#xe9;"/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="50" y="400" width="210" height="60"/>
+          <AbsoluteConstraints x="30" y="400" width="330" height="60"/>
         </Constraint>
       </Constraints>
     </Component>
