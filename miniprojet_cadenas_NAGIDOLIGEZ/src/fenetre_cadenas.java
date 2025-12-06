@@ -4,9 +4,13 @@ public class fenetre_cadenas extends javax.swing.JFrame {
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(fenetre_cadenas.class.getName());
 
 public fenetre_cadenas() {
+    this(5); // par défaut 5 tentatives si on n’en donne pas
+}
+
+public fenetre_cadenas(int maxTentatives) {
     initComponents();
-    jeu = new JeuCadenas(); // ⭐ moteur du jeu
-    resetAffichage();       // ⭐ affiche tout à zéro au lancement
+    jeu = new JeuCadenas(maxTentatives);
+    resetAffichage();
 }
 
 private void resetAffichage() {
