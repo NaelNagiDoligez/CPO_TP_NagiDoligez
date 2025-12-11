@@ -155,7 +155,7 @@ public class fenetre_cadenas extends javax.swing.JFrame {
         getContentPane().add(texte_lbl__nb_chiffres_bas, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, 230, 30));
 
         texte_lbl_nb_chiffres_exacts.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        texte_lbl_nb_chiffres_exacts.setText("Nombre de chiffres exactes :");
+        texte_lbl_nb_chiffres_exacts.setText("Nombre de chiffres exacts :");
         getContentPane().add(texte_lbl_nb_chiffres_exacts, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, 210, 30));
 
         texte_lbl_nb_chiffres_haut.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
